@@ -1,3 +1,5 @@
+Note: this is a fork from the Paolo Patierno repo that fix some bugs or issues I have experimented using this library in production.
+
 # GnatMQ
 
 ![](images/gnat.jpg)
