@@ -1,6 +1,6 @@
 ### Note: this is a fork from the Paolo Patierno repo that fix some bugs or issues I have experimented using this library in production.
 
-#### Three (3) bugs resolved in this repo:
+#### Four (4) bugs resolved in this repo:
 * MqttClient
 
 Bug resolution:
@@ -16,6 +16,10 @@ Really, is not a normal situation, but I have noticed that sometimes, a subscrip
 In these cases, an exception is generated in runtime.
 Here, I mitigate this behaviour avoiding an exception.
 As a plus, should be interesting register a log if we want to trace this situation (nos implemented).
+
+Bug resolution:
+Avoid problems in the reconnection action.
+Modified the GetHashCode method to resolve this bug.
 
 * MqttSubscriberManager
 
