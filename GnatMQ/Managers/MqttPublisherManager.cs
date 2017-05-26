@@ -292,8 +292,11 @@ namespace uPLibrary.Networking.M2Mqtt.Managers
                                 {
                                     qosLevel = (subscription.QosLevel < publish.QosLevel) ? subscription.QosLevel : publish.QosLevel;
 
-                                    // send PUBLISH message to the current subscriber
-                                    subscription.Client.Publish(publish.Topic, publish.Message, qosLevel, publish.Retain);
+                                    if (subscription.Client != null)
+                                    {
+                                        // send PUBLISH message to the current subscriber
+                                        subscription.Client.Publish(publish.Topic, publish.Message, qosLevel, publish.Retain);
+                                    }
                                 }
                             }
 
