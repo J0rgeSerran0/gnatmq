@@ -5,23 +5,24 @@
 
 Bug resolution:
 Is not a good idea throw an exception in the Publish method.
-Return 0 should be better too instead throw an exception.
-As a plus, should be interesting register a log if we want to trace this situation.
+Return 0 should be better instead throw an exception.
+As a plus, should be interesting register a log if we want to trace this situation (nos implemented).
 
 * MqttPublisherManager
 
 Bug resolution:
 Avoid a strange situation when a subscription client comes to null.
-Really, Is not a normal situation, but I have noticed that sometimes, a subscription client could be null.
-In these cases, an exception is generated at runtime.
-Here, we mitigate this behaviour.
+Really, is not a normal situation, but I have noticed that sometimes, a subscription client could be null.
+In these cases, an exception is generated in runtime.
+Here, I mitigate this behaviour avoiding an exception.
+As a plus, should be interesting register a log if we want to trace this situation (nos implemented).
 
 * MqttSubscriberManager
 
 Bug resolution:
 "The collection has been modified while accessing it"
 The Get methods have not the lock action.
-The concurrent action could generate an exception in runtime.
+A concurrent action could generate an exception in runtime.
 This code, resolves this bug.
 
 
