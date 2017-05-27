@@ -6,6 +6,7 @@
 Bug resolution:
 Is not a good idea throw an exception in the Publish method.
 Return 0 should be better instead throw an exception.
+Furthermore, if you connect different clients in different devices or machines, you could experiment this issue too.
 As a plus, should be interesting register a log if we want to trace this situation (nos implemented).
 
 * MqttPublisherManager
