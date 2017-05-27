@@ -8,6 +8,7 @@ Is not a good idea throw an exception in the Publish method.
 Return 0 should be better instead throw an exception.
 Furthermore, if you connect different clients in different devices or machines, you could experiment this issue too.
 As a plus, should be interesting register a log if we want to trace this situation (nos implemented).
+Modified the Publish method to resolve this bug.
 
 * MqttPublisherManager
 
@@ -17,6 +18,7 @@ Really, is not a normal situation, but I have noticed that sometimes, a subscrip
 In these cases, an exception is generated in runtime.
 Here, I mitigate this behaviour avoiding an exception.
 As a plus, should be interesting register a log if we want to trace this situation (nos implemented).
+Modified the PublishThread method to resolve this bug.
 
 Bug resolution:
 Avoid problems in the reconnection action.
@@ -29,6 +31,7 @@ Bug resolution:
 The Get methods have not the lock action.
 A concurrent action could generate an exception in runtime.
 This code, resolves this bug.
+Modified the GetSubscription, GetSubscriptions, GetSubscriptionsByClient and GetSubscriptionsByTopic methods to resolve this bug.
 
 
 # GnatMQ
